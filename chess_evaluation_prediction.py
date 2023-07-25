@@ -19,7 +19,6 @@ import re
 import matplotlib.pyplot as plt
 import random
 from tqdm import tqdm
-from pandarallel import pandarallel
 from multiprocessing import  Pool
 import torch
 from torch.utils.data import Dataset, DataLoader
