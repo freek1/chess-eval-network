@@ -45,3 +45,9 @@ if __name__ == "__main__":
 
     # Convert the weights to ONNX format
     convert_weights_to_onnx(saved_state_dict, (29,8,8), output_path)
+    
+    
+    # Conversion from gpu to cpu model:
+    model = Geohotz()
+    model.load_state_dict(torch.load('geohotz_20.pt', map_location='cpu'))
+    torch.save(model.state_dict(), 'geohotz_20k_cpu.pt')
