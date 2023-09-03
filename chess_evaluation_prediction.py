@@ -189,7 +189,7 @@ def main():
     print('mapping dataset')
     d_train, d_test, d_cv = map(ChessDataset, [train_df, test_df, cv_df])
     
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("mps" if torch.mps.is_available() else "cpu")
     print('device', device)
 
     # Beeg model
